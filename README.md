@@ -12,8 +12,8 @@
 - Once vulnerabilities were identified and a pentest report was generated, an article will be posted by the pentester to discuss their report and document on how the container was created --> this is where I come in
 
 # Steps on how to run the container
-- Download the repo => git clone https://github.com/p-cap/vul-app-one.git
+- Download the repo => ```git clone https://github.com/p-cap/vul-app-one.git```
 - change the permissions on build-docker.sh => chmod 700 build-docker.sh
-- run the build-docker.sh
+- run the ```build-docker.sh```
 - Pay attention to the build messages with further instructions on how to reach the application
 - Let's have fun together
