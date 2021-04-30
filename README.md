@@ -9,7 +9,7 @@
 - Provide recommendations on how to remediate the vulnerability
 
 # Report
-- Once vulnerabilities were identified and a pentest report was generated, an article will be posted by the pentester to discuss their report and document on how the container was created --> this is where I come in
+- Once vulnerabilities were identified, an article will be posted by the pentester to discuss their report and document on how the container was created --> this is where I come in
 
 # Steps on how to run the container
 - Download the repo => ```git clone https://github.com/p-cap/vul-app-one.git```
