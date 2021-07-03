@@ -24,7 +24,7 @@ echo -e "\n"
 # -d  Run container in background and print container ID
 # -p Publish a container's port(s) to the host <Host Port: Container Port>
 echo "--- Creating a new container ---"
-docker run --name=pcap-cwe --rm -p8080:80 -dit cwe-php
+docker run --name=pcap-cwe --rm -p8080:80 -v ${PWD}/site:/var/www/html -dit cwe-php
 echo -e "\n"
 
 echo "--- Please connect using http://localhost:8080 ---"
