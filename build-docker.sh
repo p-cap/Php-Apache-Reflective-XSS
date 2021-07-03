@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # remove an container
 # -f force the removal of a running container (uses SIGKILL)
@@ -23,11 +23,14 @@ echo -e "\n"
 # -i Keep STDIN open even if not attached 
 # -d  Run container in background and print container ID
 # -p Publish a container's port(s) to the host <Host Port: Container Port>
+
 echo "--- Creating a new container ---"
-docker run --name=pcap-cwe --rm -p8080:80 -v ${PWD}/site:/var/www/html -dit cwe-php
+echo "--- Create a volume mounted to /var/www/html named TEST"
+docker run --name=pcap-cwe --rm -p8080:80 --mount source=test,target=/var/www/html -dit cwe-php
 echo -e "\n"
 
 echo "--- Please connect using http://localhost:8080 ---"
 echo -e "\n"
-echo "--- NOTE: To maximize experience, please use Chrome as your browser ---"
+echo "--- NOTE: To maximize experience, please use Chrome as your browser and use the command "docker volume inspect test" ---"
+
 echo -e "\n"
