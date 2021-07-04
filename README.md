@@ -1,4 +1,5 @@
 # PHP / Apache web stack vulnerable to Reflective XSS
+NOTE: There is no DB attached to the web app which means you can put any username and password will.....bad security practice...I know ;)
 
 # Purpose
 - To understand the development side when identifying vulnerabilities in web applications
@@ -20,4 +21,6 @@ This repository contains not only php vulnerable code but also another version w
 
 # Usage
 1. connect to ```http://localhost:8080/```
-2. 
+2. Put any username and password then click login
+3. You'll be redirected to another page with a "WELCOME, $username"
+4. The link "Ready to be phished??" will take you to another page which contains more links. The links serve as html tags encoded differently to simulate the Reflective XSS 
