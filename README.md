@@ -54,3 +54,38 @@ Partially Encode URL link
       <input name=%22submit%22 type=%22submit%22 value=%22Login%22 /></form>
     </div>">
 ```
+4. Rename link to make it less suspicious. I tested the link on a compose e-mail window
+5. Send it to the victim
+
+# Mitigation through code
+Change ```welcome.php``` code 
+
+### Original Welcome.php code
+```
+<?php
+$username = $_GET['username'];
+echo '<h1> Welcome, ' . $username . '</h1>';
+?>
+<input type="button" value="Back" onClick="history.go(-1)"/>
+
+```
+
+### Sanitized Welcome.php (for this repo, I created a seperate php code called "sanitized.php")
+```
+<?php
+$username = filter_var($_GET['username'], FILTER_SANITIZE_STRING);
+
+if(preg_match("/^[a-zA-Z0-9_.-]*$/", $username)) {
+        echo ' <h1> Welcome, ' . $username . '</h1>';
+}
+else {
+        echo '<h1> You are not a username</h1>';
+}
+?>
+<br />
+<input type="button" value="Back" onClick="history.go(-1)"/>
+```
+NOTE: Sanitizing the $_GET superglobal variable is just one way in mitigating Reflective XSS based on the attacker's approach utilized in this repo
+
+
+
