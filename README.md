@@ -12,4 +12,5 @@
 # Synopsis
 This repository contains not only php vulnerable code but also another version which sanitization is applied to mitigate such attack
 
-# How to
+# Flow
+1. 
