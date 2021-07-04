@@ -18,5 +18,6 @@
 # Synopsis
 This repository contains not only php vulnerable code but also another version which sanitization is applied to mitigate such attack
 
-# Flow
-1. 
+# Usage
+1. connect to ```http://localhost:8080/```
+2. 
