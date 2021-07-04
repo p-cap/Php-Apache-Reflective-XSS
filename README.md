@@ -4,6 +4,12 @@
 - To understand the development side when identifying vulnerabilities in web applications
 - Integrate on application security practices and web application developement
 
+# Prerequisites
+- Docker => ```docker --version``` to verify installation
+- git => ```git --version``` to verify installation
+- Visual Studio Code => code editor 
+  NOTE: I used vi/vim for most of my coding for this repo
+
 # Steps on how to run the container
 - Download the repo => ```git clone https://github.com/p-cap/Php-Apache-Reflective-XSS.git```
 - change the permissions on build-docker.sh => ```chmod 700 build-docker.sh```
