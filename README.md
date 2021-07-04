@@ -21,6 +21,11 @@ This repository contains not only php vulnerable code but also another version w
 
 # Usage
 1. connect to ```http://localhost:8080/```
-2. Put any username and password then click login
-3. You'll be redirected to another page with a "WELCOME, $username"
-4. The link "Ready to be phished??" will take you to another page which contains more links. The links serve as html tags encoded differently to simulate the Reflective XSS 
+2. You'll start with the unsanitized version of the site
+3. Put any username and password then click login
+4. You'll be redirected to another page with a "WELCOME, $username"
+5. The link *"Ready to be phished??"* will take you to another page which contains more links. The first link uses the script tag-alert combo to test if the site is vulnerable. The links contain html tags encoded differently to simulate a Reflective XSS attack
+6. The *URL with url encoded HTML tags*, *URL encoded Link* and *Unicode* will redirect to another login page. The page is embedded in the links
+7. When you enter you a username and password, those credentials are stored in a text file named *saved.txt*. The file simulates an attacker stealing usernames and passwords
+8. Going to the home page, you can click on the last link that switches the site between the sanitized and unsanitized version of the site
+9. You follow the same procedures but the difference is when you are redirected to the other login page, the page will show you that *you are not entering a username* 
